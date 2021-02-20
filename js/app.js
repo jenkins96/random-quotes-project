@@ -1,4 +1,4 @@
-// Array of objects contatining two properties each
+// Array of objects. Contatining two properties each
   const quotes = [
     {
       quote:
@@ -32,12 +32,16 @@
   ];
   // Button Reference
   const button = document.getElementById("generate-btn");
-  const quoteDisplay = document.getElementById("quote");
-
-  function display(arr){
-      let index = Math.floor(Math.random() * quotes.length)
-      quoteDisplay.innerHTML = arr[index].quote;
+// Function
+  function display(){
+      // Random index generator
+      let randomIndex = Math.floor(Math.random() * quotes.length);
+      // Reference of quote text and setting a value
+      let quoteText = document.getElementById("quote").innerHTML = quotes[randomIndex].quote;
+      // Reference of Author and setting a value
+      let quoteAuthor = document.querySelector("h5").innerHTML = quotes[randomIndex].author;
   }
+  // Event listener
   button.addEventListener("click", display);
 
   
