@@ -1,5 +1,4 @@
-//immediate invoked function expression
-(function() {
+// Array of objects contatining two properties each
   const quotes = [
     {
       quote:
@@ -31,14 +30,14 @@
       author: " Tyne Daly"
     }
   ];
+  // Button Reference
+  const button = document.getElementById("generate-btn");
+  const quoteDisplay = document.getElementById("quote");
 
-  const btn = document.getElementById("generate-btn");
+  function display(arr){
+      let index = Math.floor(Math.random() * quotes.length)
+      quoteDisplay.innerHTML = arr[index].quote;
+  }
+  button.addEventListener("click", display);
 
-  btn.addEventListener("click", function() {
-    let random = Math.floor(Math.random() * quotes.length);
-    console.log(random);
-
-    document.getElementById("quote").textContent = quotes[random].quote;
-    document.querySelector(".author").textContent = quotes[random].author;
-  });
-})();
+  
